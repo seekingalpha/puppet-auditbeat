@@ -13,4 +13,4 @@ metricbeat::package_version: latest
 metricbeat::service_name: metricbeat
 metricbeat::config:
   output.elasticsearch:
-    - hosts: 'localhost:9200'
+    hosts: 'localhost:9200'
