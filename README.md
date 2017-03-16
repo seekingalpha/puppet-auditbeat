@@ -1,10 +1,5 @@
 # metricbeat
 
-[![GitHub license](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://raw.githubusercontent.com/rtib/puppet-metricbeat/master/LICENSE)
-[![Build Status](https://travis-ci.org/rtib/puppet-metricbeat.svg?branch=master)](https://travis-ci.org/rtib/puppet-metricbeat)
-[![GitHub issues](https://img.shields.io/github/issues/rtib/puppet-metricbeat.svg)](https://github.com/rtib/puppet-metricbeat/issues)
-[![Twitter](https://img.shields.io/twitter/url/https/github.com/rtib/puppet-metricbeat.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=%5Bobject%20Object%5D)
-
 #### Table of Contents
 
 1. [Description](#description)
@@ -16,7 +11,7 @@
 
 ## Description
 
-Install and configure Kibana5 as easy as include a single module and add all
+Install and configure Metricbeat as easy as include a single module and add all
 attributes through hiera.
 
 ## Setup
