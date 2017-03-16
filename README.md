@@ -12,7 +12,7 @@
 ## Description
 
 Install and configure Metricbeat as easy as include a single module and add all
-attributes through hiera.
+attributes through hiera. Heavily inspired by rtib/puppet-kibana5 module.
 
 ## Setup
 
@@ -37,7 +37,7 @@ se.
 
 ## Limitations
 
-Currently, only Debian 8 is supported. Contributions are welcome.
+Currently, only Debian 8 and Ubuntu 16.04 is supported. Contributions are welcome.
 
 ## Development
 
