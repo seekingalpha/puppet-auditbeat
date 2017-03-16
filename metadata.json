@@ -1,0 +1,36 @@
+{
+  "name": "rudibroekhuizen-metricbeat",
+  "version": "0.0.1",
+  "author": "Rudi Broekhuizen",
+  "summary": "Install and configure a Metricbeat 5.x instance",
+  "tags": [
+    "Kibana"
+  ],
+  "license": "Apache-2.0",
+  "source": "https://github.com/rudibroekhuizen/puppet-metricbeat",
+  "project_page": "https://github.com/rudibroekhuizen/puppet-metricbeat",
+  "issues_url": "https://github.com/rudibroekhuizen/puppet-metricbeat/issues",
+  "dependencies": [
+    {
+      "name": "puppetlabs-stdlib",
+      "version_requirement": ">= 4.0.0 < 5.0.0"
+    },
+    {
+      "name": "puppetlabs-apt",
+      "version_requirement": ">= 2.0.0 < 3.0.0"
+    },
+    {
+      "name": "cataphract-yaml_settings",
+      "version_requirement": ">= 0.2.0 < 1.0.0"
+    }
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "8.0"
+      ]
+    }
+  ],
+  "data_provider": "hiera"
+}
