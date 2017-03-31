@@ -1,3 +1,4 @@
+# == Class: metricbeat::config
 #
 class metricbeat::config {
 
