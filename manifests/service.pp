@@ -1,3 +1,4 @@
+# == Class: metricbeat::service
 #
 class metricbeat::service {
   $service_ensure = $metricbeat::ensure ? {
@@ -15,4 +16,5 @@ class metricbeat::service {
     hasstatus  => true,
     hasrestart => true,
   }
+  
 }
