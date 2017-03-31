@@ -1,3 +1,4 @@
+# == Class: metricbeat::install
 #
 class metricbeat::install {
   $package_ensure = $metricbeat::ensure ? {
@@ -6,6 +7,7 @@ class metricbeat::install {
   }
 
   package { $metricbeat::package_name:
-    ensure => $package_ensure,
+    ensure          => $package_ensure,
+    install_options => ['--allow-unauthenticated', '-f'],
   }
 }
