@@ -1,3 +1,4 @@
+# == Class: metricbeat::repo
 #
 class metricbeat::repo {
   if $metricbeat::manage_repo {
