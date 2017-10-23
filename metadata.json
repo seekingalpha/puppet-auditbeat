@@ -27,6 +27,5 @@
         "8.0"
       ]
     }
-  ],
-  "data_provider": "hiera"
+  ]
 }
