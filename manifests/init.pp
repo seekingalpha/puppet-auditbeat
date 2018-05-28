@@ -59,8 +59,8 @@ class auditbeat (
   String $service_name,
   Hash $config = {},
 ) {
-  class { '::auditbeat::repo': } ->
-  class { '::auditbeat::install': } ->
-  class { '::auditbeat::config': } ->
-  class { '::auditbeat::service': }
+  class { '::auditbeat::repo': }
+  -> class { '::auditbeat::install': }
+  -> class { '::auditbeat::config': }
+  -> class { '::auditbeat::service': }
 }

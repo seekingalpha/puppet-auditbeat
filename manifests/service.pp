@@ -16,5 +16,4 @@ class auditbeat::service {
     hasstatus  => true,
     hasrestart => true,
   }
-  
 }
