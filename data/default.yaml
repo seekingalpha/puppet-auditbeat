@@ -2,7 +2,7 @@
 auditbeat::ensure: present
 auditbeat::manage_repo: true
 auditbeat::repository:
-  location: 'https://artifacts.elastic.co/packages/5.x/apt'
+  location: 'https://artifacts.elastic.co/packages/6.x/apt'
   release: stable
   repos: main
   key:
