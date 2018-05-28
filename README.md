@@ -3,11 +3,10 @@
 #### Table of Contents
 
 1. [Description](#description)
-1. [Setup - The basics of getting started with auditbeaat](#setup)
-1. [Usage - Configuration options and additional functionality](#usage)
-1. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
-1. [Limitations - OS compatibility, etc.](#limitations)
-1. [Development - Guide for contributing to the module](#development)
+2. [Setup - The basics of getting started with auditbeaat](#setup)
+3. [Usage - Configuration options and additional functionality](#usage)
+4. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
+5. [Limitations - OS compatibility, etc.](#limitations)
 
 ## Description
 
@@ -18,28 +17,54 @@ attributes through hiera. Based off rudibroekhuizen/puppet-metricbeat.
 
 ### Beginning with auditbeaat
 
-The very basic steps needed for a user to get the module up and running. This
-can include setup steps, if necessary, or it can be an example of the most
-basic use of the module.
+Basic configuration with default bin, sbin and etc paths auditing.
+
+```ruby
+class { 'auditbeat':
+  config => {
+    'auditbeat.modules' => [
+      module => 'file_integrity'
+    ]
+  }
+}
+```
 
 ## Usage
 
-This section is where you describe how to customize, configure, and do the
-fancy stuff with your module here. It's especially helpful if you include usage
-examples and code samples for doing things with your module.
+### Install auditbeat 6.2.4 using default config
+
+```ruby
+class { 'auditbeat':
+  manage_repo => true,
+  repository  => {
+    location => 'https://artifacts.elastic.co/packages/6.x/apt',
+    release  => stable,
+    repos    => main,
+    key      => {
+      id     => '46095ACC8548582C1A2699A9D27D666CD88E42B4',
+      source => 'https://artifacts.elastic.co/GPG-KEY-elasticsearch'
+    }
+  },
+  package_version => '6.2.4'
+}
+```
 
 ## Reference
 
-Here, include a complete list of your module's classes, types, providers,
-facts, along with the parameters for each. Users refer to this section (thus
-the name "Reference") to find specific details; most users don't read it per
-se.
+### Classes
+
+#### Public classes
+
+* `auditbeat` - Installs and configures auditbeat.
+
+#### Private classes
+
+* `auditbeat::install` - Installs auditbeat package.
+* `auditbeat::config` - Configures auditbeat.
+* `auditbeat::repo` - Configures auditbeat's source repo.
+* `auditbeat::service` - Manages auditbeat's service.
 
 ## Limitations
 
-Currently, only Debian 8 and Ubuntu 16.04 is supported. Contributions are welcome.
-
-## Development
-
-Since your module is awesome, other users will want to play with it. Let them
-know what the ground rules for contributing are.
+This module is tested on Ubuntu 16.04 (Xenial) and should run on similar
+apt-based distributions. Contributions are welcome.
