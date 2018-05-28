@@ -1,6 +1,6 @@
 {
   "name": "seekingalpha-auditbeat",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Boris Peterbarg",
   "summary": "Install and configure an Auditbeat 5.x+ instance",
   "tags": [
