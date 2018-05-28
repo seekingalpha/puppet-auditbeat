@@ -1,7 +1,7 @@
-# Class: metricbeat
+# Class: auditbeat
 # ===========================
 #
-# Full description of class metricbeat here.
+# Full description of class auditbeat here.
 #
 # Parameters
 # ----------
@@ -28,7 +28,7 @@
 # --------
 #
 # @example
-#    class { 'metricbeat':
+#    class { 'auditbeat':
 #      servers => [ 'pool.ntp.org', 'ntp.local.company.com' ],
 #    }
 #
@@ -42,7 +42,7 @@
 #
 # Copyright 2017 Your name here, unless otherwise noted.
 #
-class metricbeat (
+class auditbeat (
   Enum['present', 'absent'] $ensure,
   Boolean $manage_repo,
   Struct[{
@@ -59,8 +59,8 @@ class metricbeat (
   String $service_name,
   Hash $config = {},
 ) {
-  class { '::metricbeat::repo': } ->
-  class { '::metricbeat::install': } ->
-  class { '::metricbeat::config': } ->
-  class { '::metricbeat::service': }
+  class { '::auditbeat::repo': } ->
+  class { '::auditbeat::install': } ->
+  class { '::auditbeat::config': } ->
+  class { '::auditbeat::service': }
 }

@@ -1,5 +1,5 @@
 require 'spec_helper'
-describe 'metricbeat' do
+describe 'auditbeat' do
   let :default_facts do
     {
       osfamily: 'Debian',
@@ -17,7 +17,7 @@ describe 'metricbeat' do
 
     it do
       is_expected.to compile.with_all_deps
-      is_expected.to contain_class('metricbeat')
+      is_expected.to contain_class('auditbeat')
     end
   end
   context 'repository settings' do
@@ -26,9 +26,9 @@ describe 'metricbeat' do
     end
 
     it do
-      is_expected.to contain_class('metricbeat::repo')
-      is_expected.to contain_apt__key('elasticsearch-metricbeat')
-      is_expected.to contain_apt__source('elasticsearch-metricbeat')
+      is_expected.to contain_class('auditbeat::repo')
+      is_expected.to contain_apt__key('elasticsearch-auditbeat')
+      is_expected.to contain_apt__source('elasticsearch-auditbeat')
     end
   end
   context 'installation' do
@@ -37,8 +37,8 @@ describe 'metricbeat' do
     end
 
     it do
-      is_expected.to contain_class('metricbeat::install')
-      is_expected.to contain_package('metricbeat').with(
+      is_expected.to contain_class('auditbeat::install')
+      is_expected.to contain_package('auditbeat').with(
         'ensure' => 'latest'
       )
     end
@@ -49,7 +49,7 @@ describe 'metricbeat' do
     end
 
     it do
-      is_expected.to contain_class('metricbeat::config')
+      is_expected.to contain_class('auditbeat::config')
     end
   end
   context 'service' do
@@ -58,8 +58,8 @@ describe 'metricbeat' do
     end
 
     it do
-      is_expected.to contain_class('metricbeat::service')
-      is_expected.to contain_service('metricbeat').with(
+      is_expected.to contain_class('auditbeat::service')
+      is_expected.to contain_service('auditbeat').with(
         'ensure'     => 'running',
         'enable'     => true,
         'hasstatus'  => true,

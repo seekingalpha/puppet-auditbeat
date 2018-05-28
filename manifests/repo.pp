@@ -1,18 +1,18 @@
-# == Class: metricbeat::repo
+# == Class: auditbeat::repo
 #
-class metricbeat::repo {
-  if $metricbeat::manage_repo {
+class auditbeat::repo {
+  if $auditbeat::manage_repo {
     include apt
-    apt::key { 'elasticsearch-metricbeat':
-      ensure => $metricbeat::ensure,
-      id     => $metricbeat::repository['key']['id'],
-      source => $metricbeat::repository['key']['source'],
+    apt::key { 'elasticsearch-auditbeat':
+      ensure => $auditbeat::ensure,
+      id     => $auditbeat::repository['key']['id'],
+      source => $auditbeat::repository['key']['source'],
     }
-    apt::source { 'elasticsearch-metricbeat':
-      ensure   => $metricbeat::ensure,
-      location => $metricbeat::repository['location'],
-      release  => $metricbeat::repository['release'],
-      repos    => $metricbeat::repository['repos']
+    apt::source { 'elasticsearch-auditbeat':
+      ensure   => $auditbeat::ensure,
+      location => $auditbeat::repository['location'],
+      release  => $auditbeat::repository['release'],
+      repos    => $auditbeat::repository['repos']
     }
   }
 }

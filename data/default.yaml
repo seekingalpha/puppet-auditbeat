@@ -1,16 +1,16 @@
 ---
-metricbeat::ensure: present
-metricbeat::manage_repo: true
-metricbeat::repository:
+auditbeat::ensure: present
+auditbeat::manage_repo: true
+auditbeat::repository:
   location: 'https://artifacts.elastic.co/packages/5.x/apt'
   release: stable
   repos: main
   key:
     id: 46095ACC8548582C1A2699A9D27D666CD88E42B4
     source: 'https://artifacts.elastic.co/GPG-KEY-elasticsearch'
-metricbeat::package_name: metricbeat
-metricbeat::package_version: latest
-metricbeat::service_name: metricbeat
-metricbeat::config:
+auditbeat::package_name: auditbeat
+auditbeat::package_version: latest
+auditbeat::service_name: auditbeat
+auditbeat::config:
   output.elasticsearch:
     hosts: 'localhost:9200'

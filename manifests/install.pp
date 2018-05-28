@@ -1,12 +1,12 @@
-# == Class: metricbeat::install
+# == Class: auditbeat::install
 #
-class metricbeat::install {
-  $package_ensure = $metricbeat::ensure ? {
+class auditbeat::install {
+  $package_ensure = $auditbeat::ensure ? {
     /absent/ => 'purged',
-    default  => $metricbeat::package_version
+    default  => $auditbeat::package_version
   }
 
-  package { $metricbeat::package_name:
+  package { $auditbeat::package_name:
     ensure          => $package_ensure,
     install_options => ['--allow-unauthenticated', '-f'],
   }

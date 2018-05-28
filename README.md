@@ -1,9 +1,9 @@
-# metricbeat
+# auditbeaat
 
 #### Table of Contents
 
 1. [Description](#description)
-1. [Setup - The basics of getting started with metricbeat](#setup)
+1. [Setup - The basics of getting started with auditbeaat](#setup)
 1. [Usage - Configuration options and additional functionality](#usage)
 1. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
 1. [Limitations - OS compatibility, etc.](#limitations)
@@ -11,12 +11,12 @@
 
 ## Description
 
-Install and configure Metricbeat as easy as include a single module and add all
-attributes through hiera. Heavily inspired by rtib/puppet-kibana5 module.
+Install and configure Auditbeat as easy as include a single module and add all
+attributes through hiera. Based off rudibroekhuizen/puppet-metricbeat.
 
 ## Setup
 
-### Beginning with metricbeat
+### Beginning with auditbeaat
 
 The very basic steps needed for a user to get the module up and running. This
 can include setup steps, if necessary, or it can be an example of the most

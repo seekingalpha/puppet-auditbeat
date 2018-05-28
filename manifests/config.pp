@@ -1,11 +1,11 @@
-# == Class: metricbeat::config
+# == Class: auditbeat::config
 #
-class metricbeat::config {
-  $settings = $metricbeat::config
+class auditbeat::config {
+  $settings = $auditbeat::config
 
-  file { '/etc/metricbeat/metricbeat.yml':
+  file { '/etc/auditbeat/auditbeat.yml':
     content => inline_template('<%= @settings.to_yaml() %>'),
-    notify  => Service[$metricbeat::service_name]
+    notify  => Service[$auditbeat::service_name]
   }
 
 }
